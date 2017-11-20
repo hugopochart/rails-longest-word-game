@@ -1,0 +1,15 @@
+<h1>Longestwords#Home</h1>
+<p>Find me in app/views/longestwords/game.html.erb</p>
+<ul>
+<% @grid.each do |elt| %>
+  <li><%=elt%></li>
+<% end %>
+</ul>
+<div class="container text-center">
+  <form action="/longestwords/game" method="get" class="co">
+    <input type="text" name="wordsend" placeholder="What is your word?">
+<!--     <input type="hidden" name="scoresend" value=<%=@score%>>-->
+    <input name="wordgrid" type="hidden" value=<%= @grid.join(",").tr(',', '') %> />
+    <input type="submit" class="btn btn-primary">
+  </form>
+</div>
